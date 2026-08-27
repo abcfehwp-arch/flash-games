@@ -32,22 +32,24 @@
             position: fixed;
             top: 10px;
             right: 10px;
-            background: rgba(0, 0, 0, 0.7);
+            background: #e67e22;
             color: #fff;
-            border: 1px solid #444;
+            border: none;
             padding: 6px 12px;
             border-radius: 4px;
             cursor: pointer;
             z-index: 9999;
             font-size: 12px;
+            font-weight: bold;
+            text-decoration: none;
         }
         #fs-btn:hover {
-            background: rgba(50, 50, 50, 0.9);
+            background: #d35400;
         }
     </style>
 </head>
 <body>
-    <button id="fs-btn" onclick="toggleFullscreen()">Fullscreen</button>
+    <a id="fs-btn" href="index.html" target="_blank">Full Screen</a>
     <div id="game-container"></div>
 
     <!-- Load Ruffle Emulator -->
@@ -59,18 +61,6 @@
             document.getElementById("game-container").appendChild(player);
             player.load("bloxors.swf");
         });
-
-        function toggleFullscreen() {
-            if (!document.fullscreenElement) {
-                document.documentElement.requestFullscreen().catch(err => {
-                    console.error("Error attempting to enable fullscreen:", err);
-                });
-            } else {
-                if (document.exitFullscreen) {
-                    document.exitFullscreen();
-                }
-            }
-        }
     </script>
 </body>
 </html>
